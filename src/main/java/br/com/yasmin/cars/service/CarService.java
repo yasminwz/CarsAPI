@@ -1,5 +1,6 @@
 package br.com.yasmin.cars.service;
 
+
 import br.com.yasmin.cars.dto.CarDtoRequest;
 import br.com.yasmin.cars.dto.CarDtoResponse;
 import br.com.yasmin.cars.entity.Car;
@@ -8,19 +9,17 @@ import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import javax.transaction.Transactional;
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
 
-@Transactional
 @Service
 public class CarService {
 
-    @Autowired
+    @Autowired(required = false)
     private CarRepository carRepository;
 
-    @Autowired
+    @Autowired(required = false)
     private ModelMapper modelMapper;
 
     public CarDtoResponse saveCar(CarDtoRequest carDtoRequest) {
